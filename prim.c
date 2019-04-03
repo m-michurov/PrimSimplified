@@ -30,13 +30,13 @@ int MakeMST(
 	    return -1;
 
     unsigned short v = 0;
+    
+    graph->distance[v] = 0;
 
     if (graph->vertices && graph->edges)
     {
         for (unsigned int k = 0; k < graph->vertices; k++)
         {
-            v = closest_vertex(graph);
-
             for (unsigned short u = 0; u < graph->vertices; u++)
             {
                 if (graph->adjacency_matrix[offset(u > v ? u : v) + (u > v ? v : u)] != UINT_MAX
@@ -49,6 +49,8 @@ int MakeMST(
             }
 
             graph->adjacency_matrix[offset(v) + v] = PROCESSED;
+
+            v = closest_vertex(graph);
 
             if (graph->parent[v] != NO_PARENT) {
                 graph->MST[graph->mst_size].src = (unsigned short) graph->parent[v];

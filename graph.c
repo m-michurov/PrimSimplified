@@ -42,8 +42,6 @@ Graph * InitGraph(
     memset(graph->parent, 0xFF, (size_t) vertices * sizeof(short));
     memset(graph->distance, 0xFF, (size_t) vertices * sizeof(unsigned int));
 
-
-    graph->distance[0] = 0;
     graph->vertices = vertices;
     graph->edges = edges;
     graph->mst_size = 0;
