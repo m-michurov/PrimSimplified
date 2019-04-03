@@ -28,7 +28,6 @@ typedef struct {
 typedef struct {
     unsigned int * adjacency_matrix;
     unsigned int * distance;
-    unsigned int * processed;
 
     short * parent;
 

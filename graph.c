@@ -8,7 +8,6 @@ void FreeGraph(
         return;
 
     free(((Graph *)graph)->distance);
-    free(((Graph *)graph)->processed);
     free(((Graph *)graph)->parent);
     free(((Graph *)graph)->adjacency_matrix);
     free(((Graph *)graph)->MST);
@@ -27,12 +26,11 @@ Graph * InitGraph(
         return NULL;
 
     graph->distance = malloc(vertices * sizeof(unsigned int));
-    graph->processed = calloc(vertices, sizeof(unsigned int));
     graph->parent = malloc(vertices * sizeof(short));
     graph->adjacency_matrix = (unsigned int *) malloc(vertices * (1 + vertices) / 2 * sizeof(unsigned int));
     graph->MST = calloc(vertices > 0 ? vertices - 1 : 0, sizeof(Edge));
 
-    if ((graph->distance == NULL || graph->processed == NULL || graph->parent == NULL ||
+    if ((graph->distance == NULL || graph->parent == NULL ||
         graph->adjacency_matrix == NULL || graph->MST == NULL) && vertices)
     {
         FreeGraph(graph);

@@ -5,6 +5,24 @@
 #define offset(vertex) ((1 + (vertex)) * (vertex) / 2)
 
 
+static inline unsigned short closest_vertex(
+        Graph * graph)
+{
+    unsigned short v = 0;
+
+    unsigned int min_distance = UINT_MAX;
+
+    for (unsigned short t = 0; t < graph->vertices; t++) {
+        if (graph->distance[t] <= min_distance && graph->adjacency_matrix[offset(t) + t] != PROCESSED) {
+            min_distance = graph->distance[t];
+            v = t;
+        }
+    }
+
+    return v;
+}
+
+
 int MakeMST(
         Graph * graph)
 {
@@ -13,20 +31,11 @@ int MakeMST(
 
     unsigned short v = 0;
 
-    unsigned int min_distance;
-
     if (graph->vertices && graph->edges)
     {
         for (unsigned int k = 0; k < graph->vertices; k++)
         {
-            min_distance = UINT_MAX;
-
-            for (unsigned short t = 0; t < graph->vertices; t++) {
-                if (graph->distance[t] <= min_distance && graph->adjacency_matrix[offset(t) + t] != PROCESSED) {
-                    min_distance = graph->distance[t];
-                    v = t;
-                }
-            }
+            v = closest_vertex(graph);
 
             for (unsigned short u = 0; u < graph->vertices; u++)
             {

@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/CLionProjects/PrimSimplified/errcodes.h
+
+E:/CLionProjects/PrimSimplified/graph.h
+stdlib.h
+-
+string.h
+-
+errcodes.h
+E:/CLionProjects/PrimSimplified/errcodes.h
+
+E:/CLionProjects/PrimSimplified/prim.c
+graph.h
+E:/CLionProjects/PrimSimplified/graph.h
+stdio.h
+-
+
