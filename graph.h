@@ -11,7 +11,7 @@
 
 
 #ifndef offset
-#define offset(vertex) ((1 + (vertex)) * (vertex) / 2)
+#define offset(v, u) ((1 + (u > v ? u : v)) * (u > v ? u : v) / 2 + (u > v ? v : u))
 #endif
 
 

@@ -6,7 +6,17 @@
 
 #IncludeRegexTransform: 
 
+E:/CLionProjects/PrimSimplified/ensure.h
+stdio.h
+-
+stdlib.h
+-
+
 E:/CLionProjects/PrimSimplified/errcodes.h
+
+E:/CLionProjects/PrimSimplified/graph.c
+graph.h
+E:/CLionProjects/PrimSimplified/graph.h
 
 E:/CLionProjects/PrimSimplified/graph.h
 stdlib.h
@@ -15,6 +25,18 @@ string.h
 -
 errcodes.h
 E:/CLionProjects/PrimSimplified/errcodes.h
+
+E:/CLionProjects/PrimSimplified/main.c
+stdio.h
+-
+limits.h
+-
+graph.h
+E:/CLionProjects/PrimSimplified/graph.h
+errcodes.h
+E:/CLionProjects/PrimSimplified/errcodes.h
+ensure.h
+E:/CLionProjects/PrimSimplified/ensure.h
 
 E:/CLionProjects/PrimSimplified/prim.c
 graph.h
